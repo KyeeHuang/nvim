@@ -4,7 +4,7 @@ local saga = require("lspsaga")
 saga.setup({
   -- when cursor in saga window you config these to move
   move_in_saga = { prev = "k", next = "j" },
-  diagnostic_header = { " ", " ", " ", " " },
+  diagnostic_header = { "󰅙 ", " ", " ", "󰋼 " },
   scroll_preview = {
     scroll_down = "<C-d>",
     scroll_up = "<C-u>",
@@ -21,7 +21,7 @@ saga.setup({
     show_file = true,
   },
   ui = {
-    code_action = "ﯦ",
+    code_action = "󰛨",
     diagnostic = "",
     preview = "",
   },

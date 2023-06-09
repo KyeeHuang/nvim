@@ -96,20 +96,20 @@ insert_left({
       -- auto change color according the vim mode
       local alias = {
         n = "",
-        i = "",
+        i = "󰏫",
         c = "",
-        V = "",
-        [""] = "",
-        v = "",
+        V = "󰇀",
+        [""] = "󰇀",
+        v = "󰇀",
         C = "",
         ["r?"] = "?",
         rm = "M",
         R = "",
         Rv = "",
-        s = "",
-        S = "",
+        s = "󰆾",
+        S = "󰆾",
         ["r"] = "HIT-ENTER",
-        [""] = "",
+        [""] = "󰆾",
         t = "T",
         ["!"] = "",
       }
@@ -223,7 +223,7 @@ insert_left({
     provider = "DiagnosticHint",
     condition = should_activate_lsp,
     highlight = { colors.white, colors.black },
-    icon = "  ",
+    icon = " 󰌵 ",
   },
 })
 
@@ -373,34 +373,34 @@ insert_right({
 -- ============================= short line ===============================
 
 local BufferTypeMap = {
-  ["DiffviewFiles"] = " Diff View",
+  ["DiffviewFiles"] = " Diff View",
   ["FTerm"] = "Terminal",
   ["Mundo"] = "Mundo History",
   ["MundoDiff"] = "Mundo Diff",
-  ["NeogitCommitMessage"] = " Neogit Commit",
+  ["NeogitCommitMessage"] = "󱆿 Neogit Commit",
   ["NeogitPopup"] = " Neogit Popup",
   ["NeogitStatus"] = " Neogit Status",
   ["NvimTree"] = " Tree",
-  ["Outline"] = " SymbolOutline",
+  ["Outline"] = "󰊕 SymbolOutline",
   ["dap-repl"] = " Dap REPL",
   ["dapui_breakpoints"] = " Dap Breakpoints",
-  ["dapui_scopes"] = "כֿ Dap Scope",
+  ["dapui_scopes"] = "󰙎 Dap Scope",
   ["dapui_stacks"] = " Dap Stacks",
-  ["dapui_watches"] = "ﭓ Dap Watch",
+  ["dapui_watches"] = "󰙔 Dap Watch",
   ["fern"] = " Fern FM",
   ["neo-tree"] = " Files",
   ["fugitive"] = " Fugitive",
   ["floggraph"] = " Git Log",
   ["fugitiveblame"] = " Fugitive Blame",
   ["git"] = " Git",
-  ["help"] = " Help",
+  ["help"] = "󰋗 Help",
   ["minimap"] = "Minimap",
   ["neoterm"] = " NeoTerm",
-  ["qf"] = " Quick Fix",
+  ["qf"] = "󰁨 Quick Fix",
   ["tabman"] = "Tab Manager",
   ["tagbar"] = "Tagbar",
   ["toggleterm"] = " ToggleTerm",
-  ["Trouble"] = "ﮒ Diagnostic",
+  ["Trouble"] = "󰚔 Diagnostic",
 }
 
 gl.short_line_list = vim.tbl_keys(BufferTypeMap)
@@ -412,7 +412,7 @@ require("galaxyline").section.short_line_left = {
       provider = function()
         -- return filename for normal file
         local get_file_name = function()
-          return string.format("%s %s", "", vim.fn.pathshorten(vim.fn.expand("%")))
+          return string.format("%s %s", "", vim.fn.pathshorten(vim.fn.expand("%")))
         end
         local name = BufferTypeMap[vim.bo.filetype] or get_file_name()
         return string.format("  %s", name)

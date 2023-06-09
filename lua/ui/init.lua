@@ -10,7 +10,7 @@ register("rebelot/kanagawa.nvim", {
 
 --- List of nerd-font icons
 register("kyazdani42/nvim-web-devicons", {
-  lazy = true,
+  lazy = false,
   config = function()
     require("nvim-web-devicons").setup({
       override = {
@@ -91,10 +91,10 @@ register("petertriho/nvim-scrollbar", {
   config = function()
     require("scrollbar").setup({
       marks = {
-        Error = { text = { "" } },
+        Error = { text = { "󰅙" } },
         Warn = { text = { "" } },
-        Hint = { text = { "" } },
-        Info = { text = { "" } },
+        Hint = { text = { "󰌵" } },
+        Info = { text = { "󰋼" } },
         GitAdd = { text = "▕" },
         GitChange = { text = "▕" },
       },
